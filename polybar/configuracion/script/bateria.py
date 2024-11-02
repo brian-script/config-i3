@@ -8,37 +8,35 @@ def estadoBateria():
         porcentaje = round(bateria.percent)
         cargando = bateria.power_plugged
 
-        # Establece colores y estados basados en el nivel de batería
         if porcentaje >= 90:
-            color = "#00FF00"  # Verde brillante
+            color = "#00FF00"  
             estado = "[██████]"
         elif porcentaje >= 75:
-            color = "#7CFC00"  # Verde claro
+            color = "#7CFC00"
             estado = "[█████ ]"
         elif porcentaje >= 60:
-            color = "#ADFF2F"  # Verde amarillento
+            color = "#ADFF2F"  
             estado = "[████  ]"
         elif porcentaje >= 50:
-            color = "#FFFF00"  # Amarillo
+            color = "#FFFF00"  
             estado = "[███   ]"
         elif porcentaje >= 40:
-            color = "#FFD700"  # Amarillo dorado
+            color = "#FFD700"  
             estado = "[██    ]"
         elif porcentaje >= 25:
-            color = "#FFA500"  # Naranja
+            color = "#FFA500"
             estado = "[█     ]"
         elif porcentaje >= 10:
-            color = "#FF4500"  # Naranja rojo
+            color = "#FF4500"  
             estado = "[█     ]"
         else:
-            color = "#FF0000"  # Rojo brillante
+            color = "#FF0000"  
             estado = "[█     ]"
 
         if cargando:
-            color = "#00BFFF"  # Azul para estado de carga
+            color = "#00BFFF"  
             estado = "[██████]"
 
-        # Devuelve el estado con el color en formato Polybar
         return f"%{{F{color}}}{estado} {porcentaje}%{{F-}}"
 
     else:
